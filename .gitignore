@@ -33,3 +33,18 @@
 
 # Debug files
 *.dSYM/
+
+.ninja_deps
+.ninja_log
+build.ninja
+rules.ninja
+
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+
+main/main
+test/suite_1/suite_1_app
+
+Testing/
+DartConfiguration.tcl
