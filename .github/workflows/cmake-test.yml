@@ -16,6 +16,8 @@ jobs:
       run: sudo apt install ninja-build
       
     - uses: actions/checkout@v3
+      with:
+        submodules: 'true'
 
     - name: Configure CMake
       run: cmake -GNinja -DTARGET_GROUP=test .
