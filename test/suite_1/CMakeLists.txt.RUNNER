@@ -1,0 +1,18 @@
+add_custom_command(
+    COMMAND ruby ../../external/Unity/auto/generate_test_runner.rb suite_1.c suite_1_runner.c
+    DEPENDS  ../../external/Unity/auto/generate_test_runner.rb suite_1.c
+    OUTPUT suite_1_runner.c
+    COMMENT "Generating code suite_1_runner.c"
+)
+
+add_executable(suite_1_app
+	suite_1.c
+	suite_1_runner.c
+)
+
+target_link_libraries(suite_1_app
+    module_a
+    Unity
+)
+
+add_test(suite_1_test suite_1_app)
