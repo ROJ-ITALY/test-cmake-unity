@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Install Ninja buil tool
-      run: apt install ninja-build
+      run: sudo apt install ninja-build
       
     - uses: actions/checkout@v3
 
