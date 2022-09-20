@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install Ninja buil tool
+    - name: Install Ninja build tool
       run: sudo apt install ninja-build
       
     - uses: actions/checkout@v3
