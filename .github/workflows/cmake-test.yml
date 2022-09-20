@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install Ninja buil tool
+      run: apt install ninja-build
+      
     - uses: actions/checkout@v3
 
     - name: Configure CMake
