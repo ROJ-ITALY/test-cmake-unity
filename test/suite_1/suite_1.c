@@ -16,6 +16,7 @@ void test_AverageThreeBytes(void)
     TEST_ASSERT_EQUAL_INT32(34, AverageThreeBytes(33, 34, 34));
     TEST_ASSERT_EQUAL_INT32(-34, AverageThreeBytes(-33, -34, -34));
     TEST_ASSERT_EQUAL_INT32(2, AverageThreeBytes(1.5, 2.5, 0.5));
+    TEST_ASSERT_EQUAL_INT32(-2, AverageThreeBytes(-1.5, -2.5, -0.5));
 }
 
 int main(void)
