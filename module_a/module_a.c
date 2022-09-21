@@ -1,7 +1,7 @@
 #include "module_a.h"
 
-int8_t AverageThreeBytes(int8_t a, int8_t b, int8_t c)
+int32_t AverageThreeBytes(float a, float b, float c)
 {
-    float sum = (float)a + (float)b + (float)c;
-    return (int8_t)((sum + (sum>0?0.5:((sum==0)?0:-0.5))) / 3.0);
+    float result = (a + b + c) / 3.0;
+    return (int32_t)(result + ((result>0)?0.5:((result==0)?0:-0.5)));
 }

@@ -11,9 +11,10 @@ void tearDown(void)
 
 void test_AverageThreeBytes(void)
 {
-    TEST_ASSERT_EQUAL_INT8(40, AverageThreeBytes(30, 40, 50));
-    TEST_ASSERT_EQUAL_INT8(-40, AverageThreeBytes(-10, -70, -40));
-    TEST_ASSERT_EQUAL_INT8(33, AverageThreeBytes(33, 33, 33));
+    TEST_ASSERT_EQUAL_INT32(40, AverageThreeBytes(30, 40, 50));
+    TEST_ASSERT_EQUAL_INT32(-40, AverageThreeBytes(-10, -70, -40));
+    TEST_ASSERT_EQUAL_INT32(34, AverageThreeBytes(33, 34, 34));
+    TEST_ASSERT_EQUAL_INT32(-34, AverageThreeBytes(-33, -34, -34));
 }
 
 int main(void)

@@ -2,7 +2,8 @@
 #define MODULE_A_H
 
 #include <stdint.h>
+#include <stdlib.h>
 
-int8_t AverageThreeBytes(int8_t a, int8_t b, int8_t c);
+int32_t AverageThreeBytes(float a, float b, float c);
 
 #endif /* MODULE_A_H */
