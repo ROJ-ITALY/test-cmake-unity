@@ -1,0 +1,39 @@
+name: cmake-production
+
+on:
+  push:
+    tags:
+      - 'v+*'
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install Ninja build tool
+      run: sudo apt install ninja-build
+      
+    - uses: actions/checkout@v3
+      with:
+        submodules: 'true'
+
+    - name: Configure CMake
+      run: cmake -GNinja -DTARGET_GROUP=production .
+
+    - name: Build
+      # Build your program with the given configuration
+      run: ninja -v
+
+    - name: Upload binary to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: main/main
+        asset_name: my-app_${tag}
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: "This is my release."  
