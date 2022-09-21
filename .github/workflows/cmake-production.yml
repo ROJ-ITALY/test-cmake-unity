@@ -33,7 +33,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: main/main
-        asset_name: my-app_${tag}
+        asset_name: my-app
         tag: ${{ github.ref }}
         overwrite: true
         body: "This is my release."  
